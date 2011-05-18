@@ -13,6 +13,11 @@ module Browsy
       raise UrlMissingError, "#{self} must have an URL" unless self.class.page_url
       super
     end
+
+    def open
+      Browsy.client.open(self.class.page_url)
+      self
+    end
   end
 end
 

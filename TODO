@@ -1,7 +1,5 @@
-* Browsy
-  * .client
 * Page
-  * .check (.script ?)
+  * .script
   * .elements
   * .element
   * .link
