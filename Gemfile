@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gemspec
 
 gem 'rake'
+gem 'selenium-webdriver'
 
 group :test do
   gem 'rspec'
