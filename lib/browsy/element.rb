@@ -10,6 +10,11 @@ module Browsy
         raise(ElementNotFoundError, "#{self} was not found")
     end
 
+    def click
+      @locators.each { |locator| Browsy.client.click(locator) }
+      self
+    end
+
   end
 end
 
