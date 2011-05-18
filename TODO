@@ -1,0 +1,11 @@
+* Browsy
+  * .client
+* Page
+  * .check (.script ?)
+  * .elements
+  * .element
+  * .link
+* Element
+  * #click
+  * #follow
+
