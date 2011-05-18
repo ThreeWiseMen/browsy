@@ -1,16 +1,13 @@
 require 'spec_helper'
 
 describe Page, '.url' do
+
   subject { object.url(url) }
 
   let(:object) { Class.new(Page) }
+  let(:url)    { 'http://example.org/' }
 
-  context 'when given an URL' do
-    let(:url) { 'http://example.org' }
-  end
+  it_behaves_like 'a command method'
 
-  context 'when given no URL' do
-    let(:url) { nil }
-  end
 end
 
