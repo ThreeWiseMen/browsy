@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Page, '.new' do
+
   subject { object.new }
 
   let(:object) { Class.new(Page) }
@@ -9,7 +10,7 @@ describe Page, '.new' do
     before(:each) { object.url(url) }
     let(:url)     { 'http://example.org/' }
 
-    it { should be_instance_of(object) }
+    it { should be_instance_of object }
   end
 
   context 'when url has not been set' do
