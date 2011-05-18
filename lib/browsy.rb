@@ -1,6 +1,15 @@
+require 'selenium-webdriver'
+require 'selenium/client'
+
+require 'browsy/configuration'
 module Browsy
 
+  def self.config
+    @configuration ||= Configuration.new('selenium.yml')
+  end
+
   def self.client
+    @client ||= Selenium::Client::Driver.new(config.data)
   end
 
   # Thrown when a page is instantiated without an URL
