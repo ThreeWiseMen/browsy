@@ -21,4 +21,5 @@ end
 
 require 'browsy/page'
 require 'browsy/element'
+require 'browsy/link'
 
