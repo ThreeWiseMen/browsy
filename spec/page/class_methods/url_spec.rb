@@ -9,5 +9,6 @@ describe Page, '.url' do
 
   it_behaves_like 'a command method'
 
+  its(:instance_methods) { should include :url }
 end
 

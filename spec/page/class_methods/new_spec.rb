@@ -7,8 +7,7 @@ describe Page, '.new' do
   let(:object) { Class.new(Page) }
 
   context 'when url has been set' do
-    before(:each) { object.url(url) }
-    let(:url)     { 'http://example.org/' }
+    before(:each) { object.url 'http://example.org/' }
 
     it { should be_instance_of object }
   end
