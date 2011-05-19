@@ -1,8 +1,8 @@
 module Browsy
   class Element
 
-    def initialize(name, *locators)
-      @name, @locators = name, locators
+    def initialize(*locators)
+      @locators = locators
     end
 
     def present?

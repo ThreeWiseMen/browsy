@@ -19,7 +19,7 @@ module Browsy
     def initialize(*)
       raise UrlMissingError, "#{self.class} must have an URL" unless url_set?
       self.class.elements_defined_by_page.each { |name, locators|
-        elements[name] = Element.new(name, *locators)
+        elements[name] = Element.new(*locators)
       }
       super
     end

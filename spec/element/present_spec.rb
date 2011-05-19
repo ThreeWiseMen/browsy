@@ -3,8 +3,7 @@ require 'spec_helper'
 describe Element, '#present?' do
   subject { object.present? }
 
-  let(:object)      { described_class.new(name, *locators) }
-  let(:name)        { :global_nav }
+  let(:object)      { described_class.new(*locators) }
   let(:locators)    { [ locator_one, locator_two ] }
   let(:locator_one) { 'a#one' }
   let(:locator_two) { 'a#two' }

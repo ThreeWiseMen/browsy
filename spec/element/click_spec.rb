@@ -4,9 +4,8 @@ describe Element, '#click' do
 
   subject { object.click }
 
-  let(:object) { described_class.new(name, locator) }
-  let(:name) { :global_nav }
-  let(:locator) { 'a#one' }
+  let(:object)  { described_class.new(locator) }
+  let(:locator) { 'a#one'                      }
 
   before :each do
     stub(Browsy.client).click(locator)
