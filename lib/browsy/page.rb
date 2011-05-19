@@ -11,6 +11,11 @@ module Browsy
       self
     end
 
+    def self.elements(page_elements)
+      page_elements.each { |name, locators| element(name, *locators) }
+      self
+    end
+
     def initialize(*)
       raise UrlMissingError, "#{self.class} must have an URL" unless url_set?
       self.class.elements_defined_by_page.each { |name, locators|
