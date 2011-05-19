@@ -16,10 +16,19 @@ module Browsy
       self
     end
 
+    def self.link(name, options)
+      links_defined_by_page[name] = options
+      define_method("#{name}_link") { links[name] }
+      self
+    end
+
     def initialize(*)
       raise UrlMissingError, "#{self.class} must have an URL" unless url_set?
       self.class.elements_defined_by_page.each { |name, locators|
         elements[name] = Element.new(*locators)
+      }
+      self.class.links_defined_by_page.each { |name, options|
+        links[name] = Link.new(*options.values)
       }
       super
     end
@@ -33,6 +42,10 @@ module Browsy
       @elements ||= {}
     end
 
+    def links
+      @links ||= {}
+    end
+
     private
 
     def url_set?
@@ -41,6 +54,10 @@ module Browsy
 
     def self.elements_defined_by_page
       @elements_defined_by_page ||= {}
+    end
+
+    def self.links_defined_by_page
+      @links_defined_by_page ||= {}
     end
   end
 end
