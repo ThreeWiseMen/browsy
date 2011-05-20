@@ -19,6 +19,7 @@ module Browsy
   class ElementNotFoundError < StandardError; end
 end
 
+require 'browsy/components'
 require 'browsy/page'
 require 'browsy/element'
 require 'browsy/link'

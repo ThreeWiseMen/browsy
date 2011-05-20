@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Page, '.element' do
+describe Components, '.element' do
 
   subject { object.element element_name, *locators }
 
-  let(:object)          { described_class                               }
-  let(:described_class) { Class.new(Page) { url 'http://example.org/' } }
-  let(:element_name)    { :header                                       }
-  let(:locators)        { ['div#header']                                }
+  let(:object)          { described_class                  }
+  let(:described_class) { Class.new { include Components } }
+  let(:element_name)    { :header                          }
+  let(:locators)        { ['div#header']                   }
 
   it_behaves_like 'a command method'
 
