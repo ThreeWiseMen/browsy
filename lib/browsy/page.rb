@@ -22,6 +22,12 @@ module Browsy
       self
     end
 
+    def self.script
+      page = new
+      page.open
+      yield page
+    end
+
     def initialize(*)
       raise UrlMissingError, "#{self.class} must have an URL" unless url_set?
       self.class.elements_defined_by_page.each { |name, locators|
