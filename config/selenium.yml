@@ -5,12 +5,55 @@ defaults: &defaults
   base_url: "http://www.gm.ca"
   timeout: 20
 
-test:
+#
+# Recommended remote system configs (2011-05):
+#
+# old:      Windows XP, IE 6
+# aging:    Windows XP, IE 7, Firefox 3.x, Chrome
+# majority: Windows 7, IE 8, Firefox 4.x, Chrome
+# new:      Windows 7, IE 9
+#
+# Set up these systems, and run the Selenium Server on each, make sure
+# they are accessible by the hostnames below, or change the hostnames
+# below to reference them correctly on your network.
+#
+
+ie6:
+  browser: "*iexplore"
+  host: "old"
   <<: *defaults
 
-development:
+ie7:
+  browser: "*iexplore"
+  host: "aging"
   <<: *defaults
 
-production:
+ie8:
+  browser: "*iexplore"
+  host: "majority"
   <<: *defaults
 
+ie9:
+  browser: "*iexplore"
+  host: "new"
+  <<: *defaults
+
+firefox3:
+  browser: "*firefox"
+  host: "aging"
+  <<: *defaults
+
+firefox4:
+  browser: "*firefox"
+  host: "majority"
+  <<: *defaults
+
+chrome_xp:
+  browser: "*googlechrome"
+  host: "aging"
+  <<: *defaults
+
+chrome:
+  browser: "*googlechrome"
+  host: "majority"
+  <<: *defaults
